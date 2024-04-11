@@ -1,0 +1,218 @@
+/* Reset or Normalize (You may include a reset or normalize CSS file here) */
+html {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+/* Body styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #daf8fe
+}
+
+/* Typography */
+h1 {
+    font-size: 36px;
+    color: #333;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #666;
+}
+/* Titles */
+
+.centered-title {
+    position: relative;
+    font-size: 3vw;
+    background-color: #f4a696;
+    color: #000000;
+    border-radius: 10px; /* Adjust the value to control the roundness of the edges */
+    transition-duration: 0.4s;
+    white-space: nowrap;
+    padding: 10px 50px;
+    border: 2px solid black;
+    width: 60%;
+    height: 60%;
+    display: flex; /* Use flexbox */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+}
+
+/* Buttons */
+.centered-button {
+    position: relative;
+    font-size: 1.3vw;
+    background-color: #f4a696;
+    color: #000000;
+    border-radius: 10px; /* Adjust the value to control the roundness of the edges */
+    cursor: pointer;
+    transition-duration: 0.4s;
+    white-space: nowrap;
+    padding: 10px 20px;
+    width: 30%;
+    height: 60%;
+    margin: 0 calc((10vw - 20px * 2 * 3) / 4); /* Calculate margin based on square container width */
+    display: flex; /* Use flexbox */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+}
+.centered-button:hover {
+    background-color: #ffeeea;
+  }
+.centered-button:active {
+    background-color: #FEE0DA;
+  }
+
+
+/* Background and Container */
+#title-container {
+    text-align: center; /* Center the buttons horizontally */
+    height: 10vh;
+    width: 50vw;
+    border: 3px solid black;
+    transform: translateX(50%);
+    left: 50%;
+    margin-top: 3vh;
+    display: flex;
+    align-items: center; /* Align items along the vertical axis */
+    justify-content: center; /* Align items along the horizontal axis */
+
+}
+#squarecontainer {
+    text-align: center;
+    height: 65vh;
+    width: 50vw;
+    border: 3px dotted black;
+    transform: translateX(50%);
+    left: 50%;
+    margin-top: 3vh;
+    display: grid;
+    justify-content: space-evenly;
+    align-items: center;
+    grid-template-columns: repeat(3, 1fr); /* Dynamic columns */
+    grid-template-rows: repeat(2, 1fr); /* Dynamic columns */
+    grid-gap: min(1vw, 1vh); /* Gap between grid items */
+    overflow: auto;
+}
+
+@media screen and (max-aspect-ratio: 1/1) {
+    #squarecontainer {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for portrait orientation */
+        grid-template-rows: repeat(3, 1fr); /* 3 rows for portrait orientation */
+    }
+    #subsquarecontainer {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for portrait orientation */
+        grid-template-rows: repeat(3, 1fr); /* 3 rows for portrait orientation */
+    }
+}
+
+@media screen and (min-aspect-ratio: 1/1) {
+    #squarecontainer {
+        grid-template-columns: repeat(3, 1fr); /* 3 columns for landscape orientation */
+        grid-template-rows: repeat(2, 1fr); /* 2 rows for landscape orientation */
+    }
+}
+
+#subsquarecontainer {
+    text-align: center;
+    height: 65vh;
+    width: 50vw;
+    border: 3px dotted black;
+    transform: translateX(50%);
+    left: 50%;
+    margin-top: 3vh;
+    display: grid;
+    justify-content: space-evenly;
+    align-items: center;
+    grid-template-columns: repeat(3, 1fr); /* Dynamic columns */
+    grid-template-rows: repeat(3, 1fr); /* Dynamic columns */
+    grid-gap: min(1vw, 1vh); /* Gap between grid items */
+    overflow: auto;
+}
+
+#buttoncontainer {
+    display: flex;
+    text-align: center; /* Center the buttons horizontally */
+    height: 10vh;
+    width: 50vw;
+    border: 3px dashed black;
+    transform: translateX(50%);
+    left: 50%;
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+    align-items: center; /* Align items along the vertical axis */
+    justify-content: center; /* Align items along the horizontal axis */
+}
+
+/* Links */
+
+/* Square */
+.square {
+    width: 90%;
+    height: 0;
+    padding-bottom: 90%;
+    display: none; 
+    border-radius: 15px; 
+    box-sizing: border-box;
+    border: 3px solid transparent;
+    transition: all 0.3s ease;
+    justify-self: center; /* Center the square horizontally within the grid cell */
+    align-self: center; /* Center the square vertically within the grid cell */
+}
+
+.subSquare {
+    width: 60%;
+    height: 0;
+    padding-bottom: 60%;
+    display: none; 
+    border-radius: 15px; 
+    box-sizing: border-box;
+    border: 3px solid transparent;
+    transition: all 0.3s ease;
+    justify-self: center; /* Center the square horizontally within the grid cell */
+    align-self: center; /* Center the square vertically within the grid cell */
+}
+
+
+.square:hover {
+    opacity: .75 !important
+}
+
+.subsquare:hover {
+    opacity: .75 !important
+}
+
+.word-overlay {
+    position: relative;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, 160%);
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    z-index: 1; /* Ensure it appears above the squares */
+    font-size: 40px; /* Adjust the font size as needed */
+}
+
+
+/* Animations */
+.fade-in {
+    animation: fadeInAnimation 0.2s ease-in forwards;
+    opacity: 0;
+}
+
+@keyframes fadeInAnimation {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+
